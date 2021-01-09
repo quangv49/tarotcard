@@ -9,12 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ReadingController {
 
-	private static final String template = "placeholder";
 	private final AtomicLong counter = new AtomicLong();
 	private static final String[] readings = {
 			"You will live for 700 years!",
 			"You will win the lottery!",
-			"You will get good grades on your exams!"
+			"You will get good grades on your exams!",
+			"Your base will belong to us!",
+			"You will say \"This is fine\"!",
+			"Your house will be assaulted by birds!",
+			"Trees will sing your name!",
+			"Your kneecaps will be safe....for now!"
 	};
 
 	@GetMapping("/reading")
