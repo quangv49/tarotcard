@@ -2,11 +2,13 @@ package com.example.demo;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.springframework.steoreotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class ReadingController {
 
 	private final AtomicLong counter = new AtomicLong();
@@ -22,7 +24,9 @@ public class ReadingController {
 	};
 
 	@GetMapping("/reading")
-	public Reading reading() {
-		return new Reading(counter.incrementAndGet(), readings[(int) (Math.random()*readings.length)]);
+	public String reading(Model model) {
+		String reading = readings[(int) (Math.random()*readings.length)];
+		model.addAttribute("reading", reading);
+		return "reading";
 	}
 }
