@@ -1,11 +1,35 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+   <head>
 	<title>Your tarot reading</title>
 	<meta http-equiv="Content-Type" content="text/html; charset = UTF-8" />
-</head>
-<body>
-	<p th:text="'Your tarot reading is: ' + ${reading}" />
-	<p>Press <a href="">here</a> to get another tarot reading!</p>
-</body>
+    <div class="heading"><h1>Tarot Cards Reading</h1></div>
+    <div class="description"><p>Totally not shady and 100% accurate tarot reading!!!</p></div>
+   </head>
+    <body>
+        <div class="curtain">
+            <div class="curtain_wrapper">
+             <input type="checkbox" checked>
+            
+                <div class="curtain_panel curtain_panel-left">
+                    <div><h1>Click on the curtains&nbsp </h1></div>
+                </div> <!-- curtain__panel -->
+            
+                <div class="curtain_content">
+					<img src="tarot-card.png">
+                    
+                    <div class="text">
+						<p th:text="${reading}" />
+					</div>
+                </div>
+            
+                <div class="curtain_panel curtain_panel-right">
+                    <h1>to see your future!</h1>
+                </div> <!-- curtain__panel -->
+        
+            </div> <!-- curtain__wrapper -->
+        </div> <!-- curtain -->
+    </body>
 </html>
